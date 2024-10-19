@@ -1,1 +1,34 @@
-<p>login works!</p>
+<div class="wrapper">
+  <div class="login">
+    <h3>Войти</h3>
+    <div class="login-about">
+      <div class="login-auth">
+        <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+          <label for="login">Логин:</label>
+          <input type="text" id="login" name="login" [(ngModel)]="loginData.username" required minlength="3"
+            #login="ngModel">
+          <div *ngIf="login.invalid && (login.dirty || login.touched)" class="error">
+            <div *ngIf="login.errors?.['required']">Логин обязателен.</div>
+            <div *ngIf="login.errors?.['minlength']">Минимум 3 символа.</div>
+          </div>
+
+          <label for="password">Пароль:</label>
+          <input type="password" id="password" name="password" [(ngModel)]="loginData.password" required minlength="6"
+            #password="ngModel">
+          <div *ngIf="password.invalid && (password.dirty || password.touched)" class="error">
+            <div *ngIf="password.errors?.['required']">Пароль обязателен.</div>
+            <div *ngIf="password.errors?.['minlength']">Минимум 6 символов.</div>
+          </div>
+
+          <button mat-raised-button color="primary" type="submit" [disabled]="loginForm.invalid" (click)="GoToHome()">
+            Войти
+          </button>
+
+          <button type="button" (click)="goToRegister()">
+            Зарегистрироваться
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

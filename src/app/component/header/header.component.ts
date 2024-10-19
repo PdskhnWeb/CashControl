@@ -1,4 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -23,5 +24,15 @@ export class HeaderComponent implements OnInit, OnDestroy {
   updateTime(): void {
     const now = new Date();
     this.currentTime = now.toLocaleTimeString(); // получаем строку с локальным временем
+  }
+
+  constructor(private router: Router) { }
+
+  goToLogin() {
+    this.router.navigate(['/login']);
+  }
+
+  GoToError() {
+    this.router.navigate(['/error']);
   }
 }

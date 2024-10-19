@@ -10,6 +10,11 @@ import { HeaderComponent } from './component/header/header.component';
 import { FooterComponent } from './component/footer/footer.component';
 import { LoginComponent } from './component/login/login.component';
 import { RegisterComponent } from './component/register/register.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatCardModule } from '@angular/material/card';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -24,7 +29,13 @@ import { RegisterComponent } from './component/register/register.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    MatCardModule,
+    MatFormFieldModule,
+    FormsModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,1 +1,55 @@
-<p>register works!</p>
+<div class="wrapper">
+  <div class="register">
+    <h3>Регистрация</h3>
+    <div class="register-about">
+      <div class="register-auth">
+        <form (ngSubmit)="onSubmit()" #registerForm="ngForm">
+
+          <!-- Username -->
+          <label for="username">Логин:</label>
+          <input type="text" id="username" name="username" [(ngModel)]="registerData.username" required minlength="3"
+            #username="ngModel">
+          <div *ngIf="username.invalid && (username.dirty || username.touched)" class="error">
+            <div *ngIf="username.errors?.['required']">Логин обязателен.</div>
+            <div *ngIf="username.errors?.['minlength']">Минимум 3 символа.</div>
+          </div>
+
+          <!-- Email -->
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" [(ngModel)]="registerData.email" required email #email="ngModel">
+          <div *ngIf="email.invalid && (email.dirty || email.touched)" class="error">
+            <div *ngIf="email.errors?.['required']">Email обязателен.</div>
+            <div *ngIf="email.errors?.['email']">Неверный формат email.</div>
+          </div>
+
+          <!-- Password -->
+          <label for="password">Пароль:</label>
+          <input type="password" id="password" name="password" [(ngModel)]="registerData.password" required
+            minlength="6" #password="ngModel">
+          <div *ngIf="password.invalid && (password.dirty || password.touched)" class="error">
+            <div *ngIf="password.errors?.['required']">Пароль обязателен.</div>
+            <div *ngIf="password.errors?.['minlength']">Минимум 6 символов.</div>
+          </div>
+
+          <!-- Confirm Password -->
+          <label for="confirmPassword">Подтвердите Пароль:</label>
+          <input type="password" id="confirmPassword" name="confirmPassword" [(ngModel)]="registerData.confirmPassword"
+            required
+            [ngClass]="{'error': registerData.password !== registerData.confirmPassword && confirmPassword.touched}"
+            #confirmPassword="ngModel">
+          <div *ngIf="registerData.password !== registerData.confirmPassword && confirmPassword.touched" class="error">
+            Пароли не совпадают.
+          </div>
+
+          <button mat-raised-button color="primary" type="submit" [disabled]="registerForm.invalid">
+            Зарегистрироваться
+          </button>
+
+          <button type="button" (click)="goToLogin()">
+            Уже есть аккаунт? Войти
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

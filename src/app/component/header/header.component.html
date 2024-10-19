@@ -10,14 +10,14 @@
     <div class="header-inner">
       <nav>
         <ul>
-          <li><a>Поддержка</a></li>
-          <li><a href="#">Поддержать проект</a></li>
-          <li><a href="#">О проекте</a></li>
+          <li><a (click)="GoToError()">Поддержка</a></li>
+          <li><a (click)="GoToError()">Поддержать проект</a></li>
+          <li><a (click)="GoToError()">О проекте</a></li>
         </ul>
       </nav>
     </div>
     <div class="header-item">
-      <button>Войти</button>
+      <button (click)="goToLogin()">Войти</button>
     </div>
   </div>
 </div>
