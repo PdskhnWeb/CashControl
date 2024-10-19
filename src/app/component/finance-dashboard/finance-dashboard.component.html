@@ -1,0 +1,46 @@
+<app-header></app-header>
+
+<div class="wrapper">
+  <div class="dashboard">
+    <h1>Баланс: {{ balance | number: '1.2-2' }} {{ currentCurrency }}</h1>
+    <label for="currency-select">Выберите валюту:</label>
+    <select id="currency-select" (change)="onCurrencyChange($event)">
+      <option value="RUB">Рубли (RUB)</option>
+      <option value="USD">Доллары (USD)</option>
+      <option value="EUR">Евро (EUR)</option>
+    </select>
+
+    <div>
+      <label>Тип транзакции:</label>
+      <select #type>
+        <option value="income">Доход</option>
+        <option value="expense">Расход</option>
+      </select>
+    </div>
+
+    <div>
+      <label>Категория:</label>
+      <input #category type="text" placeholder="Введите категорию">
+    </div>
+
+    <div>
+      <label>Сумма:</label>
+      <input #amount type="number" placeholder="Введите сумму">
+    </div>
+
+    <div>
+      <label>Описание:</label>
+      <input #description type="text" placeholder="Введите описание">
+    </div>
+
+    <button (click)="addTransaction(type.value, category.value, amount.valueAsNumber, description.value)">
+      Добавить транзакцию
+    </button>
+
+    <button (click)="viewTransactionHistory()">История транзакций</button>
+    <div>
+
+  </div>
+</div>
+
+<app-footer></app-footer>

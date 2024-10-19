@@ -1,0 +1,134 @@
+/* Общие стили для компонента истории транзакций */
+.transaction-history {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif;
+  color: #333;
+}
+
+/* Заголовок */
+.transaction-history h2 {
+  text-align: center;
+  font-size: 24px;
+  color: #007c56;
+  /* Зелёный цвет в стиле Сбера */
+  margin-bottom: 20px;
+}
+
+/* Таблица */
+.transaction-history table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  background-color: #f7f7f7;
+}
+
+.transaction-history table thead {
+  background-color: #007c56;
+  /* Зелёный цвет */
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.transaction-history table thead th {
+  padding: 12px 10px;
+  text-align: left;
+}
+
+.transaction-history table tbody td {
+  padding: 12px 10px;
+  border-bottom: 1px solid #e0e0e0;
+  text-align: left;
+}
+
+/* Чередование строк для улучшения читаемости */
+.transaction-history table tbody tr:nth-child(even) {
+  background-color: #e8f5e9;
+  /* Легкий зеленый оттенок */
+}
+
+.transaction-history table tbody tr:hover {
+  background-color: #c8e6c9;
+  /* Подсветка при наведении */
+}
+
+/* Кнопки */
+.transaction-history button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007c56;
+  /* Зелёный цвет */
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.transaction-history button:hover {
+  background-color: #005a40;
+  /* Темнее при наведении */
+}
+
+.transaction-history button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0, 124, 86, 0.4);
+}
+
+/* Медиа-запросы для адаптации под мобильные устройства */
+@media (max-width: 768px) {
+  .transaction-history {
+    padding: 15px;
+  }
+
+  .transaction-history table thead th,
+  .transaction-history table tbody td {
+    padding: 8px 5px;
+  }
+
+  .transaction-history h2 {
+    font-size: 20px;
+  }
+
+  .transaction-history button {
+    font-size: 14px;
+  }
+}
+
+button {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 10px 0;
+  background-color: #007c56;
+  /* Зеленый цвет в стиле Сбера */
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #005a40;
+  /* Темный зеленый при наведении */
+}
+
+button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0, 124, 86, 0.4);
+}
+
+.finance-dashboard,
+.transaction-history {
+  padding: 20px;
+  background-color: #f7f7f7;
+  border-radius: 8px;
+}

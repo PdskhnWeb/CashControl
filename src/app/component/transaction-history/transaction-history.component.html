@@ -1,0 +1,28 @@
+<div class="transaction-history">
+  <h2>История транзакций</h2>
+
+  <!-- Таблица транзакций -->
+  <table>
+    <thead>
+      <tr>
+        <th>Тип</th>
+        <th>Категория</th>
+        <th>Сумма</th>
+        <th>Описание</th>
+        <th>Дата</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let transaction of transactions">
+        <td>{{ transaction.type }}</td>
+        <td>{{ transaction.category }}</td>
+        <td>{{ transaction.amount }}</td>
+        <td>{{ transaction.description }}</td>
+        <td>{{ transaction.date | date:'short' }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Кнопка возвращения к созданию транзакций -->
+  <button (click)="goToDashboard()">Вернуться к созданию транзакций</button>
+</div>
